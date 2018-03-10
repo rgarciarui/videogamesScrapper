@@ -13,7 +13,10 @@ La actividad ha sido realizada de manera individual por **Ricardo García Ruiz**
 
 ## Licencia
 
-La licencia utilizada finalmente ha sido la 
+La licencia utilizada finalmente ha sido la _GPLv3 - GNU General Public License, versión 3_.
+La licencia GNU General Public License es la licencia de software libre más utilizada y constituye un documento fundamental para el movimiento de software libre.
+GPLv3 es una licencia más acorde al marco internacional de derechos de autor, y más flexible y compatible con otras licencias de software libre.  Destacan pactos adicionales para hacer frente a nuevas _amenazas_ a las libertades del software, como las patentes de software y
+la protección jurídica de los sistemas electrónicos de gestión de derechos (DRM). 
 
 ## Ficheros del código fuente
 
