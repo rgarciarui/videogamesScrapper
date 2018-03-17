@@ -1,0 +1,68 @@
+---
+title: "videogamesScrapper"
+author: "Ricardo Garcia Ruiz"
+date: "17 de marzo de 2018"
+output:
+  html_document:
+    toc: TRUE
+    highlight: default
+    number_sections: true
+    toc_depth: 3
+  pdf_document:
+    toc: TRUE
+    highlight: default
+    number_sections: true
+    toc_depth: 3
+  word_document:
+    toc: TRUE
+    highlight: default
+    toc_depth: 3
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(OutDec=",")
+```
+
+#Características de la práctica
+
+##Presentación   
+
+En esta práctica se elabora un caso práctico orientado a aprender a identificar los datos
+relevantes por un proyecto analítico y usar las herramientas de extracción de datos.
+Para hacer esta práctica tendréis que trabajar en grupos de 3 o 2 personas, o si
+preferís, también podéis hacerlo de manera individual. Tendréis que entregar un solo
+fichero con el enlace Github (https://github.com) donde haya las soluciones incluyendo
+los nombres de los componentes del equipo. Podéis utilizar la Wiki de Github para
+describir vuestro equipo y los diferentes archivos de vuestra entrega. Cada miembro del
+equipo tendrá que contribuir con su usuario Github. Podéis mirar estos ejemplos como
+guía:  
+
+* Ejemplo: https://github.com/rafoelhonrado/foodPriceScraper
+* Ejemplo complejo: https://github.com/tteguayco/Web-scraping
+
+##Objetivos
+
+Los objetivos concretos de esta práctica son:  
+
+* Aprender a aplicar los conocimientos adquiridos y su capacidad de resolución
+de problemas en entornos nuevos o poco conocidos dentro de contextos más
+amplios o multidisciplinarios.
+* Saber identificar los datos relevantes que su tratamiento aportan valor a una
+empresa y la identificación de nuevos proyectos analíticos.
+* Saber identificar los datos relevantes para llevar a cabo un proyecto analítico.
+* Capturar datos de diferentes fuentes de datos (tales como redes sociales, web
+de datos o repositorios) y mediante diferentes mecanismos (tales como
+queries, API y scraping).
+* Actuar con los principios éticos y legales relacionados con la manipulación de
+datos en función del ámbito de aplicación.
+* Desarrollar la capacidad de búsqueda, gestión y uso de información y recursos
+en el ámbito de la ciencia de datos.
+
+
+
+
+
+
+
