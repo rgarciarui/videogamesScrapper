@@ -33,9 +33,9 @@ results = html_table(table_start, header = TRUE, fill = TRUE)[[1]]
 
 # Ahora creamos un simple loop que nos ira leyendo las paginas de las urls
 # y cada nuevo data frame se unira al final del primero
-for(url_steep in urls){
+for(url_step in urls){
   
-  url_0 <- read_html(url_steep)
+  url_0 <- read_html(url_step)
   table_0 <- html_nodes(url_0, css = "table")
   result_0 = html_table(table_0, header = TRUE, fill = TRUE)[[1]]
   
@@ -45,7 +45,7 @@ for(url_steep in urls){
 }
 
 # Eliminamos los objetos que ya no nos son necesarios para ajustar la memoria usada
-rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_steep)
+rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_step)
 
 
 #Finalmente exportamos el data frame como un fichero cvs
@@ -53,4 +53,5 @@ setwd(paste0(baseDirectory, "/csv"))
 write.csv2(results, file = "videoGames.csv", row.names = FALSE)
 setwd(baseDirectory)
 
-
+# Eliminamos el dataframe
+rm(results)
