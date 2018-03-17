@@ -23,7 +23,7 @@ la protección jurídica de los sistemas electrónicos de gestión de derechos (
 
 ## Ficheros del código fuente
 
-
+* **src/videogamesScraper**: Es el código de entrada al scraping y contiene el codigo compelto utilizado para gestionar el trabajo.
 
 ## Recursos
 

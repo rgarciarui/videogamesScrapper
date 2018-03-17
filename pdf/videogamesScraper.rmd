@@ -1,5 +1,5 @@
 ---
-title: "videogamesScrapper"
+title: "videogamesScraper"
 author: "Ricardo Garcia Ruiz"
 date: "17 de marzo de 2018"
 output:
@@ -95,7 +95,7 @@ preferiblemente con R o Python, que os ha ayudado a generar el dataset
 # Realización de la práctica
 
 ## Título del dataset
-El dat
+El dataset
 
 ## Subtítulo del dataset
 
