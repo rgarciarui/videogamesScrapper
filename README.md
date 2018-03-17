@@ -1,4 +1,4 @@
-# videogamesScrapper
+# videogamesScraper
 Extrae los datos de video juegos desde el año 1976 a 2018 aproximadamente
 
 # Práctica 1: Web scraping
