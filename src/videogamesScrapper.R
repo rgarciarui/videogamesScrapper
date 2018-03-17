@@ -3,6 +3,9 @@
 # Cargamos el paquete 'rvest'
 library('rvest')
 
+# Guardamos la dirección del directorio base del trabajo
+baseDirectory = getwd()
+
 # La base de datos de RetroCollect se puede acceder con menos lecturas seleccionando:
 # - 200 resultados por pagina
 # - Ordenación: por año
@@ -46,5 +49,8 @@ rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_st
 
 
 #Finalmente exportamos el data frame como un fichero cvs
+setwd(paste0(baseDirectory, "/csv"))
 write.csv2(results, file = "videoGames.csv", row.names = FALSE)
+setwd(baseDirectory)
+
 
