@@ -44,3 +44,7 @@ for(url_steep in urls){
 # Eliminamos los objetos que ya no nos son necesarios para ajustar la memoria usada
 rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_steep)
 
+
+#Finalmente exportamos el data frame como un fichero cvs
+write.csv2(results, file = "videoGames.csv", row.names = FALSE)
+
