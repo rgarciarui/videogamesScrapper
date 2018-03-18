@@ -39,3 +39,4 @@ Por otro lado, la licencia activa las siguientes restricciones:
 ## Recursos
 
 1. Simon Munzert, Christian Rubba, Peter Meißner, Dominic Nyhuis. (2015). _Automated Data Collection with R: A Practical Guide to Web Scraping and Text Mining._ John Wiley & Sons
+2. Garcia Ruiz, Ricardo. (2014). _Estudio y caracterización de marcas de videojuegos mediante análisis de la producción de patentes y el desarrollo técnico de software para plataformas de videojuegos._ Universitat Internacional de Catalunya, DOI: 10.13140/2.1.5162.0166. 
