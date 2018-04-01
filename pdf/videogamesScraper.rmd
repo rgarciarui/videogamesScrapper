@@ -3,18 +3,18 @@ title: "videogamesScraper: Compilación de videojuegos desde 1976 hasta 2018"
 author: "Ricardo Garcia Ruiz"
 date: "17 de marzo de 2018"
 output:
-  html_document:
-    toc: TRUE
-    number_sections: true
-    toc_depth: 3
-    theme: cerulean
-    highlight: tango
   pdf_document:
     toc: TRUE
     highlight: default
     number_sections: true
     toc_depth: 3
     keep_tex: true
+  html_document:
+    toc: TRUE
+    number_sections: true
+    toc_depth: 3
+    theme: cerulean
+    highlight: tango
   word_document:
     toc: TRUE
     highlight: default
@@ -102,7 +102,7 @@ preferiblemente con R o Python, que os ha ayudado a generar el dataset
 
 Para construir nuestro dataset **Base de datos general de videojuegos retro**, el conjunto de datos escogido para esta práctica ha sido el de la web http://www.retrocollect.com/. Se pretende compilar una base de datos de videojuegos retro, y despues de un exhaustivo análisis de las diversas compilaciones de videojuegos retro existentes en Internet, se ha escogido la que ofrece RetroCollect, que corresponde con videojuegos de los denominados **'retro'**, y que ha resultado ser amplia y diversificada.  
 
-<div style="text-align: center;">Logotipo de <b>RetroCollect</b> extraído de http://www.retrocollect.com/ <img src="RetroCollect-Logo.png" width="480px" height="480px" /></div>
+<div style="text-align: center;">Logotipo de <b>RetroCollect</b> extraído de http://www.retrocollect.com/ <img src="RetroCollect-Logo.png" width="350px" height="350px" /></div>
 
 \begin{figure}[h!]
 \centering
@@ -118,13 +118,13 @@ Las principales variables de este conjunto corresponden con la **fecha**, el **n
 ## Imagen identificativa
 
 <p align="center">
-  <img src="https://www.gamestop.com/gs/images/content-pdp/Loot_images/DOOM_6.66update.jpg" width="750"/></p>
-<p align="center">DOOM, el juego icónico por excelencia entre los juegos retro que dominaron la época de los 80
+  <img src="https://cdn.pixabay.com/photo/2016/07/30/14/25/mario-1557240_960_720.jpg" width="750"/></p>
+<p align="center">Protagonistas del videojuego iconico por excelencia: Mario Bros.</p> <p align="center">Cortesía de Alexas,  https://pixabay.com/es/mario-luigi-yoschi-cifras-gracioso-1557240/
 </p>
 
 \begin{figure}[h!]
-\centering
-\includegraphics{DOOM_6.66update.jpg}
+  \centering
+  \includegraphics[width=.8\textwidth]{mario-1557240_1920.jpg}
 \end{figure}
 
 
