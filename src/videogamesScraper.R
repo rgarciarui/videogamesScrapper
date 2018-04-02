@@ -40,6 +40,19 @@ results = html_table(table_start, header = TRUE, fill = TRUE)[[1]]
 # Si no esta el año indicado, se ajusta el valor a NA
 results$Year = gsub("???", NA, results$Year)
 
+# Ajustamos los resultados de las regiones a modo binario
+# 1 -> Se comercializo en esa region
+# 0 -> No se comercializo en esa region
+#
+results$Europe = as.numeric(gsub("x", 0, results$Europe))
+results$Europe[is.na(results$Europe)] <- 1
+
+results$US = as.numeric(gsub("x", 0, results$US))
+results$US[is.na(results$US)] <- 1
+
+results$Japan = as.numeric(gsub("x", 0, results$Japan))
+results$Japan[is.na(results$Japan)] <- 1
+
 # ahora refinamos la busqueda para la variable 'OriginalSystem'
 # ya que al cargarse con los comandos previos resulta en NA porque no
 # se cargan los datos correctos, ya que se encuentran en el tag 'alt'.
@@ -73,6 +86,16 @@ for(url_step in urls){
   
   # Si no esta el año indicado, se ajusta el valor a NA
   results$Year = gsub("???", NA, results$Year)
+  
+  # Ajustamos los resultados de las regiones a modo binario
+  results$Europe = as.numeric(gsub("x", 0, results$Europe))
+  results$Europe[is.na(results$Europe)] <- 1
+  
+  results$US = as.numeric(gsub("x", 0, results$US))
+  results$US[is.na(results$US)] <- 1
+  
+  results$Japan = as.numeric(gsub("x", 0, results$Japan))
+  results$Japan[is.na(results$Japan)] <- 1
   
   # Se carga en una variable 'alt2' el conjunto de resultados de extraer todos los textos
   # que se encuentran en los tag 'alt' en la pagina html cargada.
