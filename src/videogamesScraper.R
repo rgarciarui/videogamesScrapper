@@ -26,10 +26,38 @@ urls <- paste0(url_direccion, pages)
 # Para poder genera el data.frame correctamente, cargamos la primera pagina
 url_0 <- paste0(url_direccion, "1")
 
-# y llemos la url, generando el data frame original
+# y llenamos la url, generando el data frame original, siguiendo los siguientes pasos:
+#
+# leemos la URL
 url_start <- read_html(url_0)
+
+# leemos los nodos que correspondan el css = table
 table_start <- html_nodes(url_start, css = "table")
+
+# establecemos los resultados en la variable, como dataframe
 results = html_table(table_start, header = TRUE, fill = TRUE)[[1]]
+
+# ahora refinamos la busqueda para la variable 'OriginalSystem'
+# ya que al cargarse con los comandos previos resulta en NA porque no
+# se cargan los datos correctos, ya que se encuentran en el tag 'alt'.
+# Se siguen los siguientes pasos:
+
+# Se carga en una variable 'alt2' el conjunto de resultados de extraer todos los textos
+# que se encuentran en los tag 'alt' en la pagina html cargada.
+# El resultado es mucho mayor que el numero de 200 valores que se deben recoger
+# por lo que se sigue con un proceso de limpieza.
+alt2 = html_nodes(table_start, xpath='//td[contains(@class, "searchResultsTableCenterAlign")]//img/@alt')
+
+# En este paso se eliminan los textos 'alt=', las comillas, y los espacios en 
+# blanco al comienzo de cada texto
+alt2 = gsub("* ", "", gsub('\\"',"", gsub('alt=',"",alt2),))
+
+# Finalmente se eliminan los items que no corresponden con los valores 
+# alternativos de las imagenes, es decir: "Europe", "US", "Japan"
+alt2 = alt2[! alt2 %in% c("Europe", "US", "Japan")]
+
+# Despues del proceso de limpieza, se procede a cargar los datos correctos en el dataframe
+results$`Original System` = alt2
 
 # Ahora creamos un simple loop que nos ira leyendo las paginas de las urls
 # y cada nuevo data frame se unira al final del primero
