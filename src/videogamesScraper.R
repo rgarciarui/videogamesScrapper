@@ -85,17 +85,17 @@ for(url_step in urls){
   result_0 = html_table(table_0, header = TRUE, fill = TRUE)[[1]]
   
   # Si no esta el año indicado, se ajusta el valor a NA
-  results$Year = gsub("???", NA, results$Year)
+  result_0$Year = gsub("???", NA, result_0$Year)
   
   # Ajustamos los resultados de las regiones a modo binario
-  results$Europe = as.numeric(gsub("x", 0, results$Europe))
-  results$Europe[is.na(results$Europe)] <- 1
+  result_0$Europe = as.numeric(gsub("x", 0, result_0$Europe))
+  result_0$Europe[is.na(result_0$Europe)] <- 1
   
-  results$US = as.numeric(gsub("x", 0, results$US))
-  results$US[is.na(results$US)] <- 1
+  result_0$US = as.numeric(gsub("x", 0, result_0$US))
+  result_0$US[is.na(result_0$US)] <- 1
   
-  results$Japan = as.numeric(gsub("x", 0, results$Japan))
-  results$Japan[is.na(results$Japan)] <- 1
+  result_0$Japan = as.numeric(gsub("x", 0, result_0$Japan))
+  result_0$Japan[is.na(result_0$Japan)] <- 1
   
   # Se carga en una variable 'alt2' el conjunto de resultados de extraer todos los textos
   # que se encuentran en los tag 'alt' en la pagina html cargada.
