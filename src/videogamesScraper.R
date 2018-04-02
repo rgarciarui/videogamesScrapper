@@ -37,6 +37,9 @@ table_start <- html_nodes(url_start, css = "table")
 # establecemos los resultados en la variable, como dataframe
 results = html_table(table_start, header = TRUE, fill = TRUE)[[1]]
 
+# Si no esta el año indicado, se ajusta el valor a NA
+results$Year = gsub("???", NA, results$Year)
+
 # ahora refinamos la busqueda para la variable 'OriginalSystem'
 # ya que al cargarse con los comandos previos resulta en NA porque no
 # se cargan los datos correctos, ya que se encuentran en el tag 'alt'.
@@ -67,6 +70,9 @@ for(url_step in urls){
   url_0 <- read_html(url_step)
   table_0 <- html_nodes(url_0, css = "table")
   result_0 = html_table(table_0, header = TRUE, fill = TRUE)[[1]]
+  
+  # Si no esta el año indicado, se ajusta el valor a NA
+  results$Year = gsub("???", NA, results$Year)
   
   # Se carga en una variable 'alt2' el conjunto de resultados de extraer todos los textos
   # que se encuentran en los tag 'alt' en la pagina html cargada.
