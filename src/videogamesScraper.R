@@ -41,8 +41,8 @@ rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_st
 
 #Finalmente exportamos el data frame como un fichero cvs
 setwd(paste0(baseDirectory, "/csv"))
-write.csv2(results, file = "videoGames.csv", row.names = FALSE)
+write.csv2(resultados, file = "videoGames.csv", row.names = FALSE)
 setwd(baseDirectory)
 
 # Eliminamos el dataframe
-rm(results)
+rm(resultados)
