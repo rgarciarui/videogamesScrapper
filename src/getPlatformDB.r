@@ -18,7 +18,7 @@ getPlatformDB <- function(
         # Ajustamos los dtos recibidos
         platform = platform[[1]]
         
-        # Ahora realizamos un bucl simple y obtenemos los datos solicitados
+        # Ahora realizamos un bucle simple y obtenemos los datos solicitados
         # xml_length(platform) nos devuelve el numero de datos que podemos extraer
         # creamos un vector para su manejo
         
@@ -27,7 +27,7 @@ getPlatformDB <- function(
         for (step in 1:as.numeric(xml_length(platform))){
           # xml_child(platform, 1))[["value"]] devuelve el value asignado en el xml a cada item
           # xml_text(xml_child(platform, 1)), devuelve el texto del item
-          print (step)
+
           resultado = c(resultado,  
                         c(as.integer(xml_attrs(xml_child(platform, step))[["value"]]), 
                           xml_text(xml_child(platform, step))) )
