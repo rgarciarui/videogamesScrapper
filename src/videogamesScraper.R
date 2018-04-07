@@ -6,6 +6,8 @@ library('rvest')
 source("src/accessVideoGameDatabase.r")
 # Cargamos el codigo fuente de la función getPlatfomrDB()
 source("src/getPlatformDB.r")
+# Cargamos el codigo fuente de la función searchPaginationDB()
+source("src/searchPaginationDB.r")
 
 # Guardamos la dirección del directorio base del trabajo
 baseDirectory = getwd()
@@ -30,13 +32,19 @@ view_list = "view=list"
 #             3 - 'publisher', organiza por cia. de publicación y es igual a "publisher"
 #             4 - 'year', organiza por año de publicación y es igual a "year"
 
-sort_year = "year"
+sort = "year"
 
-# Solicitaremos la carga de la pagina 2 a la 78
-webPages <- 2:78
+# Solicitaremos la carga de la pagina 2 hasta la final del listado
+# para ello accedemos dinamicamente a la web de Retrocollect con la
+# funcion searchPaginationDB() y le pedimos que nos dé la ultima pagina
+filas = 200
+
+endpages = searchPaginationDB(sort=sort, filas=filas)
+
+webPages <- 2:endpages
 
 # solicitamos a la función accessVideoGameDatabase() con los datos indicados
-resultados = accessVideoGameDatabase(sort=sort_year, pages=webPages, filas=200)
+resultados = accessVideoGameDatabase(sort=sort, pages=webPages, filas=filas)
 
 # Eliminamos los objetos que ya no nos son necesarios para ajustar la memoria usada
 rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_step, alt2)
