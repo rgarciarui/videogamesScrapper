@@ -1,4 +1,4 @@
-# Se informa d ela libreria que se require para el funcionamiento de la funcion
+# Se informa de la libreria que se require para el funcionamiento de la funcion
 require('rvest')
 
 # Carga de la funcion accessVideoGameDatabase()

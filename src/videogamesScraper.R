@@ -4,6 +4,8 @@
 library('rvest')
 # Cargamos el codigo fuente de la función accessVideoGameDatabase()
 source("src/accessVideoGameDatabase.r")
+# Cargamos el codigo fuente de la función getPlatfomrDB()
+source("src/getPlatformDB.r")
 
 # Guardamos la dirección del directorio base del trabajo
 baseDirectory = getwd()
@@ -33,7 +35,7 @@ sort_year = "year"
 # Solicitaremos la carga de la pagina 2 a la 78
 webPages <- 2:78
 
-# solicitamos a la función con los datos indicados
+# solicitamos a la función accessVideoGameDatabase() con los datos indicados
 resultados = accessVideoGameDatabase(sort=sort_year, pages=webPages, filas=200)
 
 # Eliminamos los objetos que ya no nos son necesarios para ajustar la memoria usada
