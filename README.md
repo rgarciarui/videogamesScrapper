@@ -34,7 +34,7 @@ Por otro lado, la licencia activa las siguientes restricciones:
 
 ## Ficheros del código fuente
 
-* **src/videogamesScraper**: Es el código de entrada al scraping y contiene el código principal utilizado para gestionar el trabajo de compilación de toda la base de datos retro de videojuegos de la web ** RetroCollect **.
+* **src/videogamesScraper**: Es el código de entrada al scraping y contiene el código principal utilizado para gestionar el trabajo de compilación de toda la base de datos retro de videojuegos de la web **RetroCollect**.
 * **src/videogamesScraper**: Es el código de entrada al scraping y contiene el codigo completo utilizado para gestionar el trabajo.
 
 ## Recursos
