@@ -1,8 +1,12 @@
 ---
 title: "videogamesScraper: Compilación de videojuegos desde 1976 hasta 2018"
 author: "Ricardo Garcia Ruiz"
-date: "17 de marzo de 2018"
+date: "01 de Abril de 2018"
 output:
+  word_document:
+    toc: TRUE
+    highlight: default
+    toc_depth: 3
   html_document:
     toc: TRUE
     number_sections: true
@@ -15,10 +19,6 @@ output:
     number_sections: true
     toc_depth: 3
     keep_tex: true
-  word_document:
-    toc: TRUE
-    highlight: default
-    toc_depth: 3
 bibliography: bibliografia.bib
 ---
 
@@ -171,11 +171,40 @@ Existen otras web que compilan datos sobre videojuegos, pero la extracción de d
 
 \clearpage
 
+### Ficheros del código fuente
+  
+1. **src/videogamesScraper**: Es el código de entrada al scraping y contiene el código principal utilizado para gestionar el trabajo de compilación de toda la base de datos retro de videojuegos de la web **RetroCollect**.
+2. **src/getPlatformDB**: Contiene el código fuente de la función **getPlatformDB()**. Esta función accede a la web de RetroCollet y obtiene un data frame con los códigos numérícos y sus equivalencias en texto de los nombres de las Plataformas disponibles en RetroCollect. Con esta función se puede realizar un filtro por tipo de plataforma, o bien toda la base de datos de videojuegos (por defecto).
+3. **src/searchPaginationDB**: Contiene el código fuente de la función **searchPaginationDB()**. La función realiza una búsqueda en la web localizando la página web última en la que se deben buscar los datos de scraping, devolviendo un valor numérico con la última página que se debe acceder. Los paramétros son los siguientes:
+    + **url_base**: La dirección web generalde acceso a RetroCollect
+    + **listview**: Sistema de visualización, por defecto *'list'*
+    + **modeview**:   Por defecto se buscan *'games'*
+    + **plataforma**: La plataofrma de filtro, por defecto = 0, todas sin excepcion
+    + **sort**:       Esquema de ordenación, puede tomar 4 parámetros:
+        + *'title'*, es el defectivo y es igual a **NA**
+        + *'system'*, organiza por S.O. y es igual a *"platform"*
+        + *'publisher'*, organiza por cia. de publicación y es igual a *"publisher"*
+        + *'year'*, organiza por año de publicación y es igual a *"year"*
+    + **filas**:      Indica el numero de filas de visualización por página, defecto = 20
+    + **verbose**:    Indica si se desea o no información de progreso, defecto = *TRUE*
+4. **src/accessVideoGameDatabase**: Contiene el código fuente de la función **accessVideoGameDatabase()**. La función realiza un web scrapin en RetroCollect, posibilitando un acceso dinamico a la misma y configurando algunos parametros de control en la llamada a la pagina web de RetroCollect indicando algunas variables de carga y control de visualización. Los paramétros son los siguientes:
+    + **url_base**: La dirección web generalde acceso a RetroCollect
+    + **listview**: Sistema de visualización, por defecto *'list'*
+    + **modeview**:   Por defecto se buscan *'games'*
+    + **plataforma**: La plataofrma de filtro, por defecto = 0, todas sin excepcion
+    + **sort**:       Esquema de ordenación, puede tomar 4 parámetros:
+        + *'title'*, es el defectivo y es igual a **NA**
+        + *'system'*, organiza por S.O. y es igual a *"platform"*
+        + *'publisher'*, organiza por cia. de publicación y es igual a *"publisher"*
+        + *'year'*, organiza por año de publicación y es igual a *"year"*
+    + **filas**:      Indica el numero de filas de visualización por página, defecto = 20
+    + **verbose**:    Indica si se desea o no información de progreso, defecto = *TRUE*
+
 ## Agradecimientos
 
 Los datos han sido compilados desde la base de datos online [RetroCollect](http://www.retrocollect.com/). Se ha utilizado el lenguaje '**R**' y de técnicas de *Web Scraping* para extraer la información alojada en las múltiples páginas de gestión de esta base de datos online.
 
-En la presetnación de este trabajo se han utilizado referencias a los siguientes trabajos:  
+En la presentación de este trabajo se han utilizado referencias a los siguientes trabajos:  
 
 1. Simon Munzert, Christian Rubba, Peter Meißner, Dominic Nyhuis. (2015). _Automated Data Collection with R: A Practical Guide to Web Scraping and Text Mining._ John Wiley & Sons
 2. Garcia Ruiz, Ricardo. (2014). _Estudio y caracterización de marcas de videojuegos mediante análisis de la producción de patentes y el desarrollo técnico de software para plataformas de videojuegos._ Universitat Internacional de Catalunya, DOI: 10.13140/2.1.5162.0166. 
@@ -210,7 +239,6 @@ Tanto el código fuente escrito para la extracción de datos como el dataset gen
 
 Para el desarrollo de la práctica se han tomado en consideración las técnicas de Web Scraping de [@munzert2014automated].
 
-\clearpage
 
 ## Recursos
 

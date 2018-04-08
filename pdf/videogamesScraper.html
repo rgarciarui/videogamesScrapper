@@ -103,7 +103,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">videogamesScraper: Compilación de videojuegos desde 1976 hasta 2018</h1>
 <h4 class="author"><em>Ricardo Garcia Ruiz</em></h4>
-<h4 class="date"><em>17 de marzo de 2018</em></h4>
+<h4 class="date"><em>01 de Abril de 2018</em></h4>
 
 </div>
 
@@ -118,7 +118,9 @@ $(document).ready(function () {
 <li><a href="#titulo-del-dataset-base-de-datos-general-de-videojuegos-retro"><span class="toc-section-number">2.1</span> Título del dataset: Base de datos general de videojuegos retro</a></li>
 <li><a href="#imagen-identificativa"><span class="toc-section-number">2.2</span> Imagen identificativa</a></li>
 <li><a href="#contexto"><span class="toc-section-number">2.3</span> Contexto</a></li>
-<li><a href="#contenido"><span class="toc-section-number">2.4</span> Contenido</a></li>
+<li><a href="#contenido"><span class="toc-section-number">2.4</span> Contenido</a><ul>
+<li><a href="#ficheros-del-codigo-fuente"><span class="toc-section-number">2.4.1</span> Ficheros del código fuente</a></li>
+</ul></li>
 <li><a href="#agradecimientos"><span class="toc-section-number">2.5</span> Agradecimientos</a></li>
 <li><a href="#inspiracion"><span class="toc-section-number">2.6</span> Inspiración</a></li>
 <li><a href="#licencia"><span class="toc-section-number">2.7</span> Licencia</a></li>
@@ -245,11 +247,50 @@ Cortesía de Alexas, <a href="https://pixabay.com/es/mario-luigi-yoschi-cifras-g
 <p><em>RetroCollect</em> solo almacena datos de juegos que se consideran <strong>‘retro’</strong>, de forma que aunque algunos juegos puedan ser sobradamente conocidos, deben alcanzar la categoría de <strong>‘retro’</strong> para poder estar incluídos en esta web.</p>
 <p>Existen otras web que compilan datos sobre videojuegos, pero la extracción de datos únicamente de videojuegos <em>retro</em> requería de un tratamiento posterior que no es el objetivo de esta práctica, sino el adquirir los datos directamente de la web.</p>
 
+<div id="ficheros-del-codigo-fuente" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Ficheros del código fuente</h3>
+<ol style="list-style-type: decimal">
+<li><strong>src/videogamesScraper</strong>: Es el código de entrada al scraping y contiene el código principal utilizado para gestionar el trabajo de compilación de toda la base de datos retro de videojuegos de la web <strong>RetroCollect</strong>.</li>
+<li><strong>src/getPlatformDB</strong>: Contiene el código fuente de la función <strong>getPlatformDB()</strong>. Esta función accede a la web de RetroCollet y obtiene un data frame con los códigos numérícos y sus equivalencias en texto de los nombres de las Plataformas disponibles en RetroCollect. Con esta función se puede realizar un filtro por tipo de plataforma, o bien toda la base de datos de videojuegos (por defecto).</li>
+<li><strong>src/searchPaginationDB</strong>: Contiene el código fuente de la función <strong>searchPaginationDB()</strong>. La función realiza una búsqueda en la web localizando la página web última en la que se deben buscar los datos de scraping, devolviendo un valor numérico con la última página que se debe acceder. Los paramétros son los siguientes:
+<ul>
+<li><strong>url_base</strong>: La dirección web generalde acceso a RetroCollect</li>
+<li><strong>listview</strong>: Sistema de visualización, por defecto <em>‘list’</em></li>
+<li><strong>modeview</strong>: Por defecto se buscan <em>‘games’</em></li>
+<li><strong>plataforma</strong>: La plataofrma de filtro, por defecto = 0, todas sin excepcion</li>
+<li><strong>sort</strong>: Esquema de ordenación, puede tomar 4 parámetros:
+<ul>
+<li><em>‘title’</em>, es el defectivo y es igual a <strong>NA</strong></li>
+<li><em>‘system’</em>, organiza por S.O. y es igual a <em>“platform”</em></li>
+<li><em>‘publisher’</em>, organiza por cia. de publicación y es igual a <em>“publisher”</em></li>
+<li><em>‘year’</em>, organiza por año de publicación y es igual a <em>“year”</em></li>
+</ul></li>
+<li><strong>filas</strong>: Indica el numero de filas de visualización por página, defecto = 20</li>
+<li><strong>verbose</strong>: Indica si se desea o no información de progreso, defecto = <em>TRUE</em></li>
+</ul></li>
+<li><strong>src/accessVideoGameDatabase</strong>: Contiene el código fuente de la función <strong>accessVideoGameDatabase()</strong>. La función realiza un web scrapin en RetroCollect, posibilitando un acceso dinamico a la misma y configurando algunos parametros de control en la llamada a la pagina web de RetroCollect indicando algunas variables de carga y control de visualización. Los paramétros son los siguientes:
+<ul>
+<li><strong>url_base</strong>: La dirección web generalde acceso a RetroCollect</li>
+<li><strong>listview</strong>: Sistema de visualización, por defecto <em>‘list’</em></li>
+<li><strong>modeview</strong>: Por defecto se buscan <em>‘games’</em></li>
+<li><strong>plataforma</strong>: La plataofrma de filtro, por defecto = 0, todas sin excepcion</li>
+<li><strong>sort</strong>: Esquema de ordenación, puede tomar 4 parámetros:
+<ul>
+<li><em>‘title’</em>, es el defectivo y es igual a <strong>NA</strong></li>
+<li><em>‘system’</em>, organiza por S.O. y es igual a <em>“platform”</em></li>
+<li><em>‘publisher’</em>, organiza por cia. de publicación y es igual a <em>“publisher”</em></li>
+<li><em>‘year’</em>, organiza por año de publicación y es igual a <em>“year”</em></li>
+</ul></li>
+<li><strong>filas</strong>: Indica el numero de filas de visualización por página, defecto = 20</li>
+<li><strong>verbose</strong>: Indica si se desea o no información de progreso, defecto = <em>TRUE</em></li>
+</ul></li>
+</ol>
+</div>
 </div>
 <div id="agradecimientos" class="section level2">
 <h2><span class="header-section-number">2.5</span> Agradecimientos</h2>
 <p>Los datos han sido compilados desde la base de datos online <a href="http://www.retrocollect.com/">RetroCollect</a>. Se ha utilizado el lenguaje ‘<strong>R</strong>’ y de técnicas de <em>Web Scraping</em> para extraer la información alojada en las múltiples páginas de gestión de esta base de datos online.</p>
-<p>En la presetnación de este trabajo se han utilizado referencias a los siguientes trabajos:</p>
+<p>En la presentación de este trabajo se han utilizado referencias a los siguientes trabajos:</p>
 <ol style="list-style-type: decimal">
 <li>Simon Munzert, Christian Rubba, Peter Meißner, Dominic Nyhuis. (2015). <em>Automated Data Collection with R: A Practical Guide to Web Scraping and Text Mining.</em> John Wiley &amp; Sons</li>
 <li>Garcia Ruiz, Ricardo. (2014). <em>Estudio y caracterización de marcas de videojuegos mediante análisis de la producción de patentes y el desarrollo técnico de software para plataformas de videojuegos.</em> Universitat Internacional de Catalunya, DOI: 10.13140/2.1.5162.0166.</li>
@@ -263,7 +304,7 @@ Cortesía de Alexas, <a href="https://pixabay.com/es/mario-luigi-yoschi-cifras-g
 </div>
 <div id="licencia" class="section level2">
 <h2><span class="header-section-number">2.7</span> Licencia</h2>
-<p>La licencia escogida para la publicación de este conjunto de datos ha sido <strong>CC BY-NC-SA 3.0 ES</strong>. Los motivos que han llevado a la elección de esta licencia tienen que ver con la idoneidad de las cláusulas que esta presenta en relación con el trabajo realizado:</p>
+<p>La licencia escogida para la publicación de este conjunto de datos ha sido <strong>CC BY-NC-SA 4.0 ES</strong>. Los motivos que han llevado a la elección de esta licencia tienen que ver con la idoneidad de las cláusulas que esta presenta en relación con el trabajo realizado:</p>
 <p>Se permite con nuestro trabajo y la base de datos extraída de la web:</p>
 <ul>
 <li><em>Compartir</em> — copiar y redistribuir el material en cualquier medio o formato</li>
