@@ -24,7 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={videogamesScraper: Compilación de videojuegos desde 1976 hasta 2018},
+            pdftitle={videogamesScraper: Compilación de videojuegos Retro desde 1976 hasta 2018},
             pdfauthor={Ricardo Garcia Ruiz},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -73,7 +73,8 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{videogamesScraper: Compilación de videojuegos desde 1976 hasta 2018}
+  \title{videogamesScraper: Compilación de videojuegos Retro desde 1976 hasta
+2018}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \author{Ricardo Garcia Ruiz}
@@ -81,7 +82,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{17 de marzo de 2018}
+  \date{08 de Abril de 2018}
 
 
 \begin{document}
@@ -343,6 +344,113 @@ adquirir los datos directamente de la web.
 
 \clearpage
 
+\subsubsection{Ficheros del código
+fuente}\label{ficheros-del-codigo-fuente}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{src/videogamesScraper}: Es el código de entrada al scraping y
+  contiene el código principal utilizado para gestionar el trabajo de
+  compilación de toda la base de datos retro de videojuegos de la web
+  \textbf{RetroCollect}.
+\item
+  \textbf{src/getPlatformDB}: Contiene el código fuente de la función
+  \textbf{getPlatformDB()}. Esta función accede a la web de RetroCollet
+  y obtiene un data frame con los códigos numérícos y sus equivalencias
+  en texto de los nombres de las Plataformas disponibles en
+  RetroCollect. Con esta función se puede realizar un filtro por tipo de
+  plataforma, o bien toda la base de datos de videojuegos (por defecto).
+\item
+  \textbf{src/searchPaginationDB}: Contiene el código fuente de la
+  función \textbf{searchPaginationDB()}. La función realiza una búsqueda
+  en la web localizando la página web última en la que se deben buscar
+  los datos de scraping, devolviendo un valor numérico con la última
+  página que se debe acceder. Los paramétros son los siguientes:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{url\_base}: La dirección web generalde acceso a RetroCollect
+  \item
+    \textbf{listview}: Sistema de visualización, por defecto
+    \emph{`list'}
+  \item
+    \textbf{modeview}: Por defecto se buscan \emph{`games'}
+  \item
+    \textbf{plataforma}: La plataforma de filtro, por defecto = 0, todas
+    sin excepcion
+  \item
+    \textbf{sort}: Esquema de ordenación, puede tomar 4 parámetros:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{`title'}, es el defectivo y es igual a \textbf{NA}
+    \item
+      \emph{`system'}, organiza por S.O. y es igual a
+      \emph{``platform''}
+    \item
+      \emph{`publisher'}, organiza por cia. de publicación y es igual a
+      \emph{``publisher''}
+    \item
+      \emph{`year'}, organiza por año de publicación y es igual a
+      \emph{``year''}
+    \end{itemize}
+  \item
+    \textbf{filas}: Indica el numero de filas de visualización por
+    página, defecto = 20
+  \item
+    \textbf{verbose}: Indica si se desea o no información de progreso,
+    defecto = \emph{TRUE}
+  \end{itemize}
+\item
+  \textbf{src/accessVideoGameDatabase}: Contiene el código fuente de la
+  función \textbf{accessVideoGameDatabase()}. La función realiza un web
+  scrapin en RetroCollect, posibilitando un acceso dinamico a la misma y
+  configurando algunos parametros de control en la llamada a la pagina
+  web de RetroCollect indicando algunas variables de carga y control de
+  visualización. Los paramétros son los siguientes:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{url\_base}: La dirección web generalde acceso a RetroCollect
+  \item
+    \textbf{listview}: Sistema de visualización, por defecto
+    \emph{`list'}
+  \item
+    \textbf{modeview}: Por defecto se buscan \emph{`games'}
+  \item
+    \textbf{plataforma}: La plataforma de filtro, por defecto = 0, todas
+    sin excepcion
+  \item
+    \textbf{sort}: Esquema de ordenación, puede tomar 4 parámetros:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{`title'}, es el defectivo y es igual a \textbf{NA}
+    \item
+      \emph{`system'}, organiza por S.O. y es igual a
+      \emph{``platform''}
+    \item
+      \emph{`publisher'}, organiza por cia. de publicación y es igual a
+      \emph{``publisher''}
+    \item
+      \emph{`year'}, organiza por año de publicación y es igual a
+      \emph{``year''}
+    \end{itemize}
+  \item
+    \textbf{filas}: Indica el numero de filas de visualización por
+    página, defecto = 20
+  \item
+    \textbf{verbose}: Indica si se desea o no información de progreso,
+    defecto = \emph{TRUE}
+  \end{itemize}
+\end{enumerate}
+
 \subsection{Agradecimientos}\label{agradecimientos}
 
 Los datos han sido compilados desde la base de datos online
@@ -351,7 +459,7 @@ lenguaje `\textbf{R}' y de técnicas de \emph{Web Scraping} para extraer
 la información alojada en las múltiples páginas de gestión de esta base
 de datos online.
 
-En la presetnación de este trabajo se han utilizado referencias a los
+En la presentación de este trabajo se han utilizado referencias a los
 siguientes trabajos:
 
 \begin{enumerate}
@@ -384,7 +492,7 @@ distintas zonas geográficas, y su impacto relativo o absoluto.
 \subsection{Licencia}\label{licencia}
 
 La licencia escogida para la publicación de este conjunto de datos ha
-sido \textbf{CC BY-NC-SA 3.0 ES}. Los motivos que han llevado a la
+sido \textbf{CC BY-NC-SA 4.0 ES}. Los motivos que han llevado a la
 elección de esta licencia tienen que ver con la idoneidad de las
 cláusulas que esta presenta en relación con el trabajo realizado:
 
@@ -431,8 +539,6 @@ dataset generado pueden ser accedidos a través de
 
 Para el desarrollo de la práctica se han tomado en consideración las
 técnicas de Web Scraping de (Munzert et al. 2014).
-
-\clearpage
 
 \subsection*{Recursos}\label{recursos}
 \addcontentsline{toc}{subsection}{Recursos}

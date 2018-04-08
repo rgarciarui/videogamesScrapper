@@ -3,6 +3,10 @@ title: "videogamesScraper: Compilación de videojuegos Retro desde 1976 hasta 20
 author: "Ricardo Garcia Ruiz"
 date: "08 de Abril de 2018"
 output:
+  word_document:
+    toc: TRUE
+    highlight: default
+    toc_depth: 3
   html_document:
     toc: TRUE
     number_sections: true
@@ -15,10 +19,6 @@ output:
     number_sections: true
     toc_depth: 3
     keep_tex: true
-  word_document:
-    toc: TRUE
-    highlight: default
-    toc_depth: 3
 bibliography: bibliografia.bib
 ---
 
@@ -179,7 +179,7 @@ Existen otras web que compilan datos sobre videojuegos, pero la extracción de d
     + **url_base**: La dirección web generalde acceso a RetroCollect
     + **listview**: Sistema de visualización, por defecto *'list'*
     + **modeview**:   Por defecto se buscan *'games'*
-    + **plataforma**: La plataofrma de filtro, por defecto = 0, todas sin excepcion
+    + **plataforma**: La plataforma de filtro, por defecto = 0, todas sin excepcion
     + **sort**:       Esquema de ordenación, puede tomar 4 parámetros:
         + *'title'*, es el defectivo y es igual a **NA**
         + *'system'*, organiza por S.O. y es igual a *"platform"*
@@ -191,7 +191,7 @@ Existen otras web que compilan datos sobre videojuegos, pero la extracción de d
     + **url_base**: La dirección web generalde acceso a RetroCollect
     + **listview**: Sistema de visualización, por defecto *'list'*
     + **modeview**:   Por defecto se buscan *'games'*
-    + **plataforma**: La plataofrma de filtro, por defecto = 0, todas sin excepcion
+    + **plataforma**: La plataforma de filtro, por defecto = 0, todas sin excepcion
     + **sort**:       Esquema de ordenación, puede tomar 4 parámetros:
         + *'title'*, es el defectivo y es igual a **NA**
         + *'system'*, organiza por S.O. y es igual a *"platform"*
