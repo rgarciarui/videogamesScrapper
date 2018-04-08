@@ -43,7 +43,7 @@ searchPaginationDB <- function(
     
   }else{              # si hay dato nuevo
     
-    url_direccion = paste0(url_base, "mode=games", "&", view_list, 
+    url_direccion = paste0(url_base, "mode=", modeview, "&", listview, 
                            "&", "rows=", filas, "&", "sort=", sort, 
                            "&", "platform=", plataforma) 
     

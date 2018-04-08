@@ -52,9 +52,6 @@ webPages <- 2:endpages
 # para todas las plataformas
 resultados = accessVideoGameDatabase(sort=sort, pages=webPages, filas=filas)
 
-# Eliminamos los objetos que ya no nos son necesarios para ajustar la memoria usada
-rm(url_0, table_0, result_0, table_start, url_start, urls, url_direccion, url_step, alt2)
-
 #Finalmente exportamos el data frame como un fichero cvs
 setwd(paste0(baseDirectory, "/csv"))
 write.csv2(resultados, file = "videoGames.csv", row.names = FALSE)
