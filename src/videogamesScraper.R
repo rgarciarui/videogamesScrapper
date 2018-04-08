@@ -54,5 +54,5 @@ setwd(paste0(baseDirectory, "/csv"))
 write.csv2(resultados, file = "videoGames.csv", row.names = FALSE)
 setwd(baseDirectory)
 
-# Eliminamos el dataframe
-rm(resultados)
+# Eliminamos los objetos
+rm(list = ls())

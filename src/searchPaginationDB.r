@@ -46,7 +46,7 @@ searchPaginationDB <- function(
   
   # llenamos la url, generando el data frame original
   url <- read_html(url_direccion)
-  print(url_direccion)
+
   # Se carga en una variable 'platform' el conjunto de resultados de extraer
   # todos los textos que se encuentran en los datos de plataformas 
   # en la pagina html cargada.
