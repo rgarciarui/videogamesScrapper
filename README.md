@@ -5,7 +5,7 @@ Extrae los datos de video juegos desde el año 1976 a 2018 aproximadamente
 
 ## Descripción
 
-Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y ciclo de vida de los datos_, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de _web scraping_ mediante el lenguaje de programación R para extraer así datos de la web _http://www.retrocollect.com/_ y generar un _dataset_.
+Esta práctica se ha realizado bajo el contexto de la asignatura _Tipología y ciclo de vida de los datos_, perteneciente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. En ella, se aplican técnicas de _web scraping_ mediante el lenguaje de programación R para extraer así datos de la web _http://www.retrocollect.com/_ y generar un _dataset_ completo con los datos de todos los videojuegos, sin discriminación por tipo de filtro alguno.
 <p align="center">
   <img src="http://www.retrocollect.com/videogamedatabase/public/images/various/RetroCollect-Logo.png" width="350"/>
 </p>
