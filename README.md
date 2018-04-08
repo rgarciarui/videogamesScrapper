@@ -37,6 +37,7 @@ Por otro lado, la licencia activa las siguientes restricciones:
 * **src/videogamesScraper**: Es el código de entrada al scraping y contiene el código principal utilizado para gestionar el trabajo de compilación de toda la base de datos retro de videojuegos de la web **RetroCollect**.
 * **src/getPlatformDB**: Contiene el código fuente de la función **getPlatformDB()**. Esta función accede a la web de RetroCollet y obtiene un data frame con los códigos numérícos y sus equivalencias en texto de los nombres de las Plataformas disponibles en RetroCollect. Con esta función se puede realizar un filtro por tipo de plataforma, o bien toda la base de datos de videojuegos (por defecto).
 * **src/searchPaginationDB**: Contiene el código fuente de la función **searchPaginationDB()**. La función realiza un web scraping en RetroCollect, posibilitando un  acceso dinamico a la misma y configurando algunos parametros de control en la llamada a la pagina web de RetroCollect indicando algunas variables de carga y control de visualización:
+
 1 - url_base:   La dirección web generalde acceso a RetroCollect
 2 - listview:   Sistema de visualización, por defecto 'list'
 3 - modeview:   Por defecto se buscan 'games'
@@ -47,7 +48,7 @@ Por otro lado, la licencia activa las siguientes restricciones:
 8             3 - 'publisher', organiza por cia. de publicación y es igual a "publisher"
 9             4 - 'year', organiza por año de publicación y es igual a "year"
 10 filas:      Indica el numero de filas de visualización por página, defecto = 20
-10 verbose:    Indica si se desea o no información de progreso, defecto TRUE
+11 verbose:    Indica si se desea o no información de progreso, defecto TRUE
 
 ## Recursos
 
