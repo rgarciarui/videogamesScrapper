@@ -42,10 +42,10 @@ Por otro lado, la licencia activa las siguientes restricciones:
   + **modeview**:   Por defecto se buscan *'games'*
   + **plataforma**: La plataofrma de filtro, por defecto = 0, todas sin excepcion
   + **sort**:       Esquema de ordenación, puede tomar 4 parámetros:
-  +           1 - *'title'*, es el defectivo y es igual a **NA**
-  +           2 - *'system'*, organiza por S.O. y es igual a *"platform"*
-  +           3 - *'publisher'*, organiza por cia. de publicación y es igual a *"publisher"*
-  +           4 - *'year'*, organiza por año de publicación y es igual a *"year"*
+    + *'title'*, es el defectivo y es igual a **NA**
+    + *'system'*, organiza por S.O. y es igual a *"platform"*
+    + *'publisher'*, organiza por cia. de publicación y es igual a *"publisher"*
+    + *'year'*, organiza por año de publicación y es igual a *"year"*
   + **filas**:      Indica el numero de filas de visualización por página, defecto = 20
   + **verbose**:    Indica si se desea o no información de progreso, defecto = *TRUE*
 
