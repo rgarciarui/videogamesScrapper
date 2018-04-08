@@ -16,9 +16,9 @@ La actividad ha sido realizada de manera individual por **Ricardo García Ruiz**
 
 ## Licencia
 
-La licencia utilizada finalmente ha sido la _CC BY-NC-SA 3.0 ES_.
-La licencia CC BY-NC-SA 3.0 ES es una licencia de software libre muy utilizada y constituye un documento fundamental para el movimiento de software libre.
-CC BY-NC-SA 3.0 ES es una licencia acorde al marco internacional de derechos de autor y al nacional en España, siendo flexible y compatible con otras licencias de software libre.
+La licencia utilizada finalmente ha sido la _CC BY-NC-SA 4.0 ES_.
+La licencia CC BY-NC-SA 4.0 ES es una licencia de software libre muy utilizada y constituye un documento fundamental para el movimiento de software libre.
+CC BY-NC-SA 4.0 ES es una licencia acorde al marco internacional de derechos de autor y al nacional en España, siendo flexible y compatible con otras licencias de software libre.
 
 Se permite con nuestro trabajo y la base de datos extraída de la web:  
 
@@ -34,7 +34,8 @@ Por otro lado, la licencia activa las siguientes restricciones:
 
 ## Ficheros del código fuente
 
-* **src/videogamesScraper**: Es el código de entrada al scraping y contiene el codigo compelto utilizado para gestionar el trabajo.
+* **src/videogamesScraper**: Es el código de entrada al scraping y contiene el código principal utilizado para gestionar el trabajo de compilación de toda la base de datos retro de videojuegos de la web ** RetroCollect **.
+* **src/videogamesScraper**: Es el código de entrada al scraping y contiene el codigo completo utilizado para gestionar el trabajo.
 
 ## Recursos
 
