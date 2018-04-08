@@ -9,7 +9,9 @@ require('rvest')
 # variables de carga y control de visualización:
 #
 # url_base:   La dirección web generalde acceso a RetroCollect
-# view_list:  Sistema de visualización, por defecto 'list'
+# listview:   Sistema de visualización, por defecto 'list'
+# modeview:   Por defecto se buscan 'games'
+# plataforma: La plataofrma de filtro, por defecto = 0, todas sin excepcion
 # sort:       Esquema de ordenación, puede tomar 4 parametros:
 #             1 - 'title', es el defectivo y es igual a NA
 #             2 - 'system', organiza por S.O. y es igual a "platform"
@@ -22,8 +24,10 @@ require('rvest')
 
 accessVideoGameDatabase <- function (
                             url_base = "http://www.retrocollect.com/videogamedatabase/search?", 
-                            view_list = "view=list",
+                            listview = "list",
+                            modeview = "games",
                             sort = NA,
+                            plataforma = 0,
                             filas = 20,
                             pages = c(2:10),
                             verbose = TRUE
@@ -35,13 +39,14 @@ accessVideoGameDatabase <- function (
   
     if (is.na(sort)){   # Si no hay dato nuevo: sort = NA
       
-      url_direccion = paste0(url_base, "mode=games", "&", view_list, 
-                          "&", "rows=", filas)      
+      url_direccion = paste0(url_base, "mode=", modeview, "&", "view=", listview, 
+                          "&", "rows=", filas, "&", "platform=", plataforma)      
 
     }else{              # si hay dato nuevo
       
-      url_direccion = paste0(url_base, "mode=games", "&", view_list, 
-                          "&", "rows=", filas, "&", "sort=", sort) 
+      url_direccion = paste0(url_base, "mode=", modeview, "&", "view=", listview, 
+                          "&", "rows=", filas, "&", "sort=", sort, 
+                          "&", "platform=", plataforma) 
 
     }
   

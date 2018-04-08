@@ -23,7 +23,7 @@ baseDirectory = getwd()
 url_base = "http://www.retrocollect.com/videogamedatabase/search?"
 
 # Modo de acceso a la base de datos de videojuegos
-view_list = "view=list"
+listview = "list"
 
 # Modos de arreglo de ordenación de la base de datos
 # Se puede escoger uno de los 4 siguientes:
@@ -33,6 +33,11 @@ view_list = "view=list"
 #             4 - 'year', organiza por año de publicación y es igual a "year"
 
 sort = "year"
+
+# Ahora leemos los datos de las plataformas activas en la DB
+# Por defecto se toma 'AllPlatforms' con numero id = 0
+plataformas = getPlatformDB()
+head(plataformas)
 
 # Solicitaremos la carga de la pagina 2 hasta la final del listado
 # para ello accedemos dinamicamente a la web de Retrocollect con la
@@ -44,6 +49,7 @@ endpages = searchPaginationDB(sort=sort, filas=filas)
 webPages <- 2:endpages
 
 # solicitamos a la función accessVideoGameDatabase() con los datos indicados
+# para todas las plataformas
 resultados = accessVideoGameDatabase(sort=sort, pages=webPages, filas=filas)
 
 # Eliminamos los objetos que ya no nos son necesarios para ajustar la memoria usada

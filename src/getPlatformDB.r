@@ -22,19 +22,20 @@ getPlatformDB <- function(
         # xml_length(platform) nos devuelve el numero de datos que podemos extraer
         # creamos un vector para su manejo
         
-        resultado = c()
+        resultado = data.frame(Numeros=NA, Platforms=NA)
         
         for (step in 1:as.numeric(xml_length(platform))){
           # xml_child(platform, 1))[["value"]] devuelve el value asignado en el xml a cada item
           # xml_text(xml_child(platform, 1)), devuelve el texto del item
-
-          resultado = c(resultado,  
-                        c(as.integer(xml_attrs(xml_child(platform, step))[["value"]]), 
-                          xml_text(xml_child(platform, step))) )
+          
+          resultado[step,] <- c(
+                                as.integer(xml_attrs(xml_child(platform, step))[["value"]]),
+                                xml_text(xml_child(platform, step))
+                                )
           
         }
         
-        # devolvemos el resultado de la funcion
+        # devolvemos el resultado de la funcion como un data frame
         return(resultado)
 
 }
