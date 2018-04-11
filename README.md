@@ -40,7 +40,7 @@ Por otro lado, la licencia activa las siguientes restricciones:
   + **url_base**: La dirección web generalde acceso a RetroCollect
   + **listview**: Sistema de visualización, por defecto *'list'*
   + **modeview**:   Por defecto se buscan *'games'*
-  + **plataforma**: La plataofrma de filtro, por defecto = 0, todas sin excepcion
+  + **plataforma**: La plataforma de filtro, por defecto = 0, todas sin excepcion
   + **sort**:       Esquema de ordenación, puede tomar 4 parámetros:
     + *'title'*, es el defectivo y es igual a **NA**
     + *'system'*, organiza por S.O. y es igual a *"platform"*
