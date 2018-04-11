@@ -3,16 +3,16 @@ title: "videogamesScraper: Compilación de videojuegos Retro desde 1976 hasta 20
 author: "Ricardo Garcia Ruiz"
 date: "08 de Abril de 2018"
 output:
-  word_document:
-    toc: TRUE
-    highlight: default
-    toc_depth: 3
   html_document:
     toc: TRUE
     number_sections: true
     toc_depth: 3
     theme: cerulean
     highlight: tango
+  word_document:
+    toc: TRUE
+    highlight: default
+    toc_depth: 3
   pdf_document:
     toc: TRUE
     highlight: default
