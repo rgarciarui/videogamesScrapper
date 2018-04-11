@@ -219,7 +219,7 @@ De igual manera, también puede utilizar verificar el comportamiento de aceptaci
 
 ## Licencia
 
-La licencia escogida para la publicación de este conjunto de datos ha sido **CC BY-NC-SA 4.0 ES**. Los motivos que han llevado a la elección de esta licencia tienen que ver con la idoneidad de las cláusulas que esta presenta en relación con el trabajo realizado:
+La licencia escogida para la publicación de este conjunto de datos ha sido **CC BY-NC-SA 4.0 International**. Los motivos que han llevado a la elección de esta licencia tienen que ver con la idoneidad de las cláusulas que esta presenta en relación con el trabajo realizado:
 
 Se permite con nuestro trabajo y la base de datos extraída de la web:  
 
